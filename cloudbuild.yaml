@@ -2,3 +2,5 @@ steps:
 #Build Docker #1
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'paichayon/${PROJECT_ID}:test', '.']
+- name: "gcr.io/cloud-builders/docker"
+  args: ["push", "paichayon/${PROJECT_ID}:test"]
