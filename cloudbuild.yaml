@@ -11,5 +11,5 @@ steps:
   
 availableSecrets:
   secretManager:
-  - versionName: projects/974260035667/secrets/paichayon-docker
+  - versionName: projects/974260035667/secrets/paichayon-docker/versions/1
     env: 'PASSWORD'
