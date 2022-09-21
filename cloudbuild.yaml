@@ -8,7 +8,7 @@ steps:
   secretEnv: ['PASSWORD']
 - name: "gcr.io/cloud-builders/docker"
   args: ["push", "paichayon/${PROJECT_ID}:test"]
-  
+logsBucket: 'gs://mylogsbucket'
 availableSecrets:
   secretManager:
   - versionName: projects/974260035667/secrets/paichayon-docker/versions/2
