@@ -2,5 +2,14 @@ steps:
 #Build Docker #1
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'paichayon/${PROJECT_ID}:test', '.']
+- name: 'gcr.io/cloud-builders/docker'
+  entrypoint: 'bash'
+  args: ['-c', 'docker login --username=paichayon@hotmail.com --password=$$PASSWORD']
+  secretEnv: ['PASSWORD']
 - name: "gcr.io/cloud-builders/docker"
   args: ["push", "paichayon/${PROJECT_ID}:test"]
+  
+availableSecrets:
+  secretManager:
+  - versionName: projects/974260035667/secrets/paichayon-docker
+    env: 'PASSWORD'
